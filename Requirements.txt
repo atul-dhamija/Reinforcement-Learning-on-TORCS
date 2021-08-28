@@ -1,0 +1,5 @@
+Python==3.7
+Tensorflow-gpu==2.3
+Keras==2.6
+Numpy==1.18.5
+gym_torcs
