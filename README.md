@@ -29,9 +29,13 @@ Imagine you play a video game with a friend that provides you some feedback. You
 At the beginning, you don’t know how to play, so you try some action randomly. The Critic observes your action and provides feedback.
 Learning from this feedback, you’ll update your policy and be better at playing that game.
 On the other hand, your friend (Critic) will also update their own way to provide feedback so it can be better next time.
-As we can see, the idea of Actor Critic is to have two neural networks. We estimate both:
-Both run in parallel.
+As we can see, the idea of Actor Critic is to have two neural networks. We estimate both, both run in parallel.
 Because we have two models (Actor and Critic) that must be trained, it means that we have two set of weights, the weights of actor network are updated with resect toh the output of critic network. Update of target networks is done by soft update.
+
+### Why Actor-Critic ?
+
+![repo23](https://user-images.githubusercontent.com/64823050/131215846-7e6ed02c-b227-4990-9a3d-df0a1537a447.jpg)
+
 The Actor Critic model is a better score function. Instead of waiting until the end of the episode as we do in Monte Carlo REINFORCE, we make an update at each step (TD Learning).
 Because we do an update at each time step, we can’t use the total rewards R(t). Instead, we need to train a Critic model that approximates the value function (remember that value function calculates what is the maximum expected future reward given a state and an action). This value function replaces the reward function in policy gradient that calculates the rewards only at the end of the episode.
 
@@ -72,6 +76,7 @@ This Algorithm was implemented using tensorflow as follows :
 
 ## Result
 
+Uploading repo21.mp4…
 
 
 ## References
