@@ -25,22 +25,23 @@ TORCS simulator is an open source car simulator which is extensively used in AI 
 
 #### ```from gym_torcs import TorcsEnv``` import gym_torcs library which is used to setup connection.
 #### ```env = TorcsEnv(vision=False, throttle=True,gear_change=False)``` setup TORCS environment. 
-#### ```ob = env.reset()``` ```s_t = np.hstack((ob.angle, ob.track, ob.trackPos, ob.speedX, ob.speedY,  ob.speedZ, ob.wheelSpinVel/100.0, ob.rpm))``` retrieves data(states) from game server.
+#### ```ob = env.reset()```
+#### ```s_t = np.hstack((ob.angle, ob.track, ob.trackPos, ob.speedX, ob.speedY,  ob.speedZ, ob.wheelSpinVel/100.0, ob.rpm))``` retrieves data(states) from game server.
 #### ```ob, r_t, done, info = env.step(action)``` sends command(actions to be taken) to the game server, where r_t is the reward for taking that action.
 
 ### Step 2. Actor-Critic Models
 
 #### Actor Model
-#####```def create_actor_model(state_size) :
-    S = Input(shape=[state_size])   
-    h0 = Dense(HIDDEN1_UNITS, activation='relu')(S)
-    h1 = Dense(HIDDEN2_UNITS, activation='relu')(h0)
-    Steering = Dense(1,activation='tanh')(h1)  
-    Acceleration = Dense(1,activation='sigmoid')(h1)   
-    Brake = Dense(1,activation='sigmoid')(h1) 
-    V = concatenate([Steering,Acceleration,Brake])          
-    model = Model(inputs=S,outputs=V)
-    return model```
+##### ```def create_actor_model(state_size) :```
+##### ```  S = Input(shape=[state_size])```   
+##### ```  h0 = Dense(HIDDEN1_UNITS, activation='relu')(S)```
+##### ```  h1 = Dense(HIDDEN2_UNITS, activation='relu')(h0)```
+##### ```  Steering = Dense(1,activation='tanh')(h1)```  
+##### ```  Acceleration = Dense(1,activation='sigmoid')(h1)```   
+##### ```  Brake = Dense(1,activation='sigmoid')(h1)```
+##### ```  V = concatenate([Steering,Acceleration,Brake])```        
+##### ```  model = Model(inputs=S,outputs=V)```
+##### ```  return model```
 
 ### Step 3. WebApp Framework
 
