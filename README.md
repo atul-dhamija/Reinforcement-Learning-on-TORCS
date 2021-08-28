@@ -21,7 +21,7 @@ TORCS simulator is an open source car simulator which is extensively used in AI 
 ## Approach
 
 
-### Step 1. Data Exchange Between the Client and Game
+### Data Exchange Between the Client and Game
 
 #### ```from gym_torcs import TorcsEnv``` import gym_torcs library which is used to setup connection.
 #### ```env = TorcsEnv(vision=False, throttle=True,gear_change=False)``` setup TORCS environment. 
@@ -29,32 +29,15 @@ TORCS simulator is an open source car simulator which is extensively used in AI 
 #### ```s_t = np.hstack((ob.angle, ob.track, ob.trackPos, ob.speedX, ob.speedY,  ob.speedZ, ob.wheelSpinVel/100.0, ob.rpm))``` retrieves data(states) from game server.
 #### ```ob, r_t, done, info = env.step(action)``` sends command(actions to be taken) to the game server, where r_t is the reward for taking that action.
 
-### Step 2. Actor-Critic Models
+### Actor-Critic Models
 
 #### Actor Model
-##### ```def create_actor_model(state_size) :```
-##### ```  S = Input(shape=[state_size])```   
-##### ```  h0 = Dense(HIDDEN1_UNITS, activation='relu')(S)```
-##### ```  h1 = Dense(HIDDEN2_UNITS, activation='relu')(h0)```
-##### ```  Steering = Dense(1,activation='tanh')(h1)```  
-##### ```  Acceleration = Dense(1,activation='sigmoid')(h1)```   
-##### ```  Brake = Dense(1,activation='sigmoid')(h1)```
-##### ```  V = concatenate([Steering,Acceleration,Brake])```        
-##### ```  model = Model(inputs=S,outputs=V)```
-##### ```  return model```
 
-### Step 3. WebApp Framework
+![repo17](https://user-images.githubusercontent.com/64823050/131214303-8dbdedb2-e890-4c14-8d11-9125f9d82808.png)
 
+#### Critic Model
 
-![repo7](https://user-images.githubusercontent.com/64823050/129591794-b4fe2d45-27bf-4167-9be8-147a05c29cf7.jpg)
-
-
-
-## Web Application
- 
- 
-![repo15](https://user-images.githubusercontent.com/64823050/130605735-ca553035-4ff5-4450-9f69-431d8c5e3597.jpg)
-
+![repo18](https://user-images.githubusercontent.com/64823050/131214316-d3326d2f-d198-40a7-8b3e-fb05885bc183.png)
 
 
 ## Result
