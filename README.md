@@ -5,7 +5,7 @@ This project was aimed to develop a self driving car agent in TORCS simulator us
 
 ## Dependencies
 
-You can install Python dependencies using ``` pip install -r requirements.txt ``` , and it should just work. if you want to install package manually, here's a list:
+You can install Python dependencies using ``` pip install -r Requirements.txt ``` , and it should just work. if you want to install package manually, here's a list:
 
  - Python==3.7
  - Tensorflow-gpu==2.3.0
