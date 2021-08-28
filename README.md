@@ -81,6 +81,6 @@ This Algorithm was implemented using tensorflow as follows :
 
 ## References
 
-[Deep-RL-Course](https://simoninithomas.github.io/deep-rl-course/)
-[RL-Blog by yanpanlau](https://yanpanlau.github.io/2016/10/11/Torcs-Keras.html)
-[Optimizing hyperparameters of deep reinforcement learning for autonomous driving based on whale optimization algorithm by Nesma M. AshrafID1, Reham R. Mostafa2, Rasha H. Sakr1, M. Z. Rashad](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0252754)
+### [Deep-RL-Course](https://simoninithomas.github.io/deep-rl-course/)
+### [RL-Blog by yanpanlau](https://yanpanlau.github.io/2016/10/11/Torcs-Keras.html)
+### [Optimizing hyperparameters of deep reinforcement learning for autonomous driving based on whale optimization algorithm by Nesma M. AshrafID1, Reham R. Mostafa2, Rasha H. Sakr1, M. Z. Rashad](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0252754)
