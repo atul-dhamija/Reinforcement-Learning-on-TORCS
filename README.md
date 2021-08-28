@@ -17,11 +17,23 @@ You can install Python dependencies using ``` pip install -r Requirements.txt ``
 ## Background
 
 TORCS simulator is an open source car simulator which is extensively used in AI research. The reason for selecting TORCS for this project is that it is easy to get states from the game using gym_torcs library, which uses SCR plugin to setup connection with the game and thus making it easy to send commands into the game and also retrieving current states. In reinforcement learning we need to get states data and send action values continuously, so this simulator suited best for our project. 
-Self driving car is an area of wide research and it encompasses many fields, implementation of this project was a good method for practically applying various concepts of reinforcement learning.
+Self driving car is an area of wide research and it encompasses many fields, implementation of this project was a good method for practically applying various concepts of reinforcement learning. 
 
 ## Approach
 
 ### Actor-Critic Background
+
+![repo22](https://user-images.githubusercontent.com/64823050/131215722-107c3db0-9d05-4c19-88dc-cb28de4e5ee1.jpg)
+
+Imagine you play a video game with a friend that provides you some feedback. You’re the Actor and your friend is the Critic.
+At the beginning, you don’t know how to play, so you try some action randomly. The Critic observes your action and provides feedback.
+Learning from this feedback, you’ll update your policy and be better at playing that game.
+On the other hand, your friend (Critic) will also update their own way to provide feedback so it can be better next time.
+As we can see, the idea of Actor Critic is to have two neural networks. We estimate both:
+Both run in parallel.
+Because we have two models (Actor and Critic) that must be trained, it means that we have two set of weights, the weights of actor network are updated with resect toh the output of critic network. Update of target networks is done by soft update.
+The Actor Critic model is a better score function. Instead of waiting until the end of the episode as we do in Monte Carlo REINFORCE, we make an update at each step (TD Learning).
+Because we do an update at each time step, we can’t use the total rewards R(t). Instead, we need to train a Critic model that approximates the value function (remember that value function calculates what is the maximum expected future reward given a state and an action). This value function replaces the reward function in policy gradient that calculates the rewards only at the end of the episode.
 
 ### Data Exchange Between the Client and Game
 
@@ -54,10 +66,16 @@ This Algorithm was implemented using tensorflow as follows :
 #### ```qsa = critic([states,a_for_grad])``` qsa is the outpt of critic network for states, a_for_grad, which will be used for updating actor policy.
 #### ```grads = tape.gradient(qsa,actor.trainable_weights)``` Calculated gradients of actor policy with respect to the output of critic network. 
 #### ```opt.apply_gradients(zip(grads, actor.trainable_weights))``` Updated actor weights using gradients obtained above.
-#### ```critic_target.trainable_weights[i] = 0.001*critic.trainable_weights[i] + (1-0.001)*critic.trainable_weights[i]``` Soft update of parameters of critic target network. Similarly actor target network's parameters were updated.
+#### ```critic_target.trainable_weights[i] = 0.001*critic.trainable_weights[i] + (1-0.001)*critic.trainable_weights[i]``` Soft update of parameters of critic_target network with critic network parameters. Similarly actor_target network's parameters were updated.
        
 
 
 ## Result
 
+
+
 ## References
+
+[Deep-RL-Course](https://simoninithomas.github.io/deep-rl-course/)
+[RL-Blog by yanpanlau](https://yanpanlau.github.io/2016/10/11/Torcs-Keras.html)
+[Optimizing hyperparameters of deep reinforcement learning for autonomous driving based on whale optimization algorithm by Nesma M. AshrafID1, Reham R. Mostafa2, Rasha H. Sakr1, M. Z. Rashad](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0252754)
