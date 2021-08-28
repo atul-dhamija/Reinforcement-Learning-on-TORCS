@@ -45,20 +45,12 @@ Self driving car is an area of wide research and it encompasses many fields, imp
 
 ![repo19](https://user-images.githubusercontent.com/64823050/131214519-4b4bb198-1e77-4fd8-91c2-0a58fe5f5393.png)
 
-This Algorithm was implemente using tensorflow as follows :
+This Algorithm was implemented using tensorflow as follows :
 
 ![repo20](https://user-images.githubusercontent.com/64823050/131214556-72bb1530-9921-43cd-98e7-952f4289dff0.png)
 
 
+
 ## Result
 
-
-![repo16](https://user-images.githubusercontent.com/64823050/130605750-10311cbf-d5df-4b1d-80fa-916bea1a8683.jpg)
-
-
-
 ## References
-
-
-[HOG Tranformation](https://www.analyticsvidhya.com/blog/2019/09/feature-engineering-images-introduction-hog-feature-descriptor/)
-
