@@ -17,9 +17,11 @@ You can install Python dependencies using ``` pip install -r requirements.txt ``
 ## Background
 
 TORCS simulator is an open source car simulator which is extensively used in AI research. The reason for selecting TORCS for this project is that it is easy to get states from the game using gym_torcs library, which uses SCR plugin to setup connection with the game and thus making it easy to send commands into the game and also retrieving current states. In reinforcement learning we need to get states data and send action values continuously, so this simulator suited best for our project. 
+Self driving car is an area of wide research and it encompasses many fields, implementation of this project was a good method for practically applying various concepts of reinforcement learning.
 
 ## Approach
 
+### Actor-Critic Background
 
 ### Data Exchange Between the Client and Game
 
@@ -38,6 +40,11 @@ TORCS simulator is an open source car simulator which is extensively used in AI 
 #### Critic Model
 
 ![repo18](https://user-images.githubusercontent.com/64823050/131214316-d3326d2f-d198-40a7-8b3e-fb05885bc183.png)
+
+### Model Working
+
+![repo19](https://user-images.githubusercontent.com/64823050/131214519-4b4bb198-1e77-4fd8-91c2-0a58fe5f5393.png)
+
 
 
 ## Result
