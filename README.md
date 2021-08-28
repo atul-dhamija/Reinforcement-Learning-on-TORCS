@@ -54,10 +54,9 @@ This Algorithm was implemented using tensorflow as follows :
 #### ```qsa = critic([states,a_for_grad])``` qsa is the outpt of critic network for states, a_for_grad, which will be used for updating actor policy.
 #### ```grads = tape.gradient(qsa,actor.trainable_weights)``` Calculated gradients of actor policy with respect to the output of critic network. 
 #### ```opt.apply_gradients(zip(grads, actor.trainable_weights))``` Updated actor weights using gradients obtained above.
-#### ```for i in range(len(critic.trainable_weights)) :
-       critic_target.trainable_weights[i] = 0.001*critic.trainable_weights[i] + (1-0.001)*critic.trainable_weights[i]
-   for i in range(len(actor.trainable_weights)) :
-       actor_target.trainable_weights[i] = 0.001*actor.trainable_weights[i] + (1-0.001)*actor.trainable_weights[i]```
+#### ```critic_target.trainable_weights[i] = 0.001*critic.trainable_weights[i] + (1-0.001)*critic.trainable_weights[i]``` Soft update of parameters of critic target network. Similarly actor target network's parameters were updated.
+       
+
 
 ## Result
 
