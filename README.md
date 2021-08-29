@@ -1,6 +1,6 @@
 # Self Driving Car in TORCS Simulator
 
-This project was aimed to develop a self driving car agent in TORCS simulator using Deep Reinforcement Learning Actor-Critic Algorithm. 
+This project is aimed to develop a self driving car agent in TORCS Simulator using Deep Reinforcement's Learning Actor-Critic Algorithm. 
 
 
 ## Dependencies
