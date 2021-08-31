@@ -26,7 +26,7 @@ Self driving car is an area of wide research and it encompasses many fields, imp
 ![repo22](https://user-images.githubusercontent.com/64823050/131215722-107c3db0-9d05-4c19-88dc-cb28de4e5ee1.jpg)
 
 Imagine you play a video game with a friend that provides you some feedback. You’re the Actor and your friend is the Critic.
-At the beginning, you don’t know how to play, so you try some action randomly. The Critic observes your action and provides feedback.
+At the beginning, you don’t know how to play the game, so you try some action randomly. The Critic observes your actions and provides feedback.
 Learning from this feedback, you’ll update your policy and be better at playing that game.
 On the other hand, your friend (Critic) will also update their own way to provide feedback so it can be better next time.
 As we can see, the idea of Actor Critic is to have two neural networks. We estimate both, both run in parallel.
